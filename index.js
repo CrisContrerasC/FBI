@@ -39,7 +39,7 @@ app.get('/SignIn', (req, res) => {
 
         res.send(`<h4>
         <a href="/rutaSecreta?token=${token}" title ="Bienvenido al sistema del FBI">Puede ingresar al sistema ${agente.email}</a> </h4>
-        <script>sessionStorage.setItem('token', '${token}')</script>`)
+        <script>sessionStorage.setItem('token', JSON.stringify('${token}'))</script>`)
     } else {
         res.status(401).send(`<h2>Usuario o contraseña incorrectos</h2>`)
     }
